@@ -104,22 +104,34 @@
     <script>
         async function fetchWorldInfo() {
             try {
-                const proxy = 'https://corsproxy.io/?';
-                const url = 'https://nh3.apilink.link/WorldMap/WorldInfo';
-                
-                const response = await fetch(proxy + encodeURIComponent(url));
+                // Direct fetch - no proxy (since we're on the same origin now)
+                const response = await fetch('https://nh3.apilink.link/WorldMap/WorldInfo', {
+                    method: 'GET',
+                    mode: 'cors'
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
                 const data = await response.json();
                 
                 document.getElementById('activePlayers').textContent = data.worldInfo.activePlayers || 'N/A';
                 document.getElementById('daysOld').textContent = data.worldInfo.daysOld || 'N/A';
                 document.getElementById('housesInGlory').textContent = data.worldInfo.housesInGlory || 'N/A';
                 document.getElementById('age').textContent = "2nd Age";
+                
+                console.log("✅ Data loaded successfully:", data);
             } catch (error) {
-                console.error("Error:", error);
-                alert("Failed to load data");
+                console.error("❌ Error fetching data:", error);
+                document.getElementById('activePlayers').textContent = "Error";
+                document.getElementById('daysOld').textContent = "Error";
+                document.getElementById('housesInGlory').textContent = "Error";
+                document.getElementById('age').textContent = "Error";
             }
         }
 
+        // Load data when page opens
         window.onload = fetchWorldInfo;
     </script>
 </body>
