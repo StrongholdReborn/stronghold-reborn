@@ -6,74 +6,53 @@
     <title>Stronghold Reborn</title>
     <style>
         body {
-            font-family: 'Georgia', serif;
+            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
+            padding: 20px;
             min-height: 100vh;
-            background: linear-gradient(rgba(15, 12, 8, 0.45), rgba(10, 8, 5, 0.65)),
-                        url('https://raw.githubusercontent.com/StrongholdReborn/stronghold-reborn/main/background.jpg') center/cover fixed;
-            background-attachment: fixed;
-            color: #ffeb9e;
+            background: url('https://raw.githubusercontent.com/StrongholdReborn/stronghold-reborn/main/background.jpg') center/cover fixed;
+            color: white;
             text-align: center;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         .card {
-            background: rgba(28, 22, 15, 0.90);
-            border: 5px solid #d4af37;
-            border-image: linear-gradient(#ffe8a8, #d4af37, #b8860b) 1;
-            border-radius: 16px;
-            padding: 35px 40px;        /* Smaller padding */
-            max-width: 440px;          /* Much narrower */
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85),
-                        inset 0 0 70px rgba(255, 235, 158, 0.12);
+            background: rgba(0, 0, 0, 0.75);
+            border: 3px solid #ffd700;
+            border-radius: 12px;
+            padding: 25px 40px;
+            max-width: 380px;
+            width: 100%;
         }
         h1 {
-            color: #ffeb9e;
-            font-size: 2.5em;
-            margin: 0 0 8px 0;
-            text-shadow: 0 5px 12px rgba(0,0,0,0.9),
-                         0 0 25px rgba(255, 235, 158, 0.6);
-            letter-spacing: 3px;
+            font-size: 2.2em;
+            margin: 0 0 15px 0;
+            color: #ffd700;
         }
         .subtitle {
-            color: #e8c070;
-            font-size: 1.2em;
-            margin-bottom: 35px;
-            letter-spacing: 4px;
+            font-size: 1.1em;
+            margin-bottom: 25px;
+            color: #ffcc66;
         }
         .info {
-            font-size: 1.4em;
-            margin: 24px 0;
+            margin: 18px 0;
+            font-size: 1.25em;
         }
         .label {
-            color: #f0d48c;
-            font-size: 1.0em;
-            display: block;
-            margin-bottom: 6px;
-            letter-spacing: 2px;
-        }
-        strong {
-            color: #fff8d6;
-            font-size: 1.5em;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.75);
+            font-size: 0.95em;
+            color: #ccc;
+            margin-bottom: 4px;
         }
         button {
-            margin-top: 35px;
-            padding: 14px 40px;
+            margin-top: 25px;
+            padding: 12px 30px;
             font-size: 1.1em;
-            background: linear-gradient(#f0d48c, #d4af37);
-            color: #2c2118;
-            border: 3px solid #b8860b;
-            border-radius: 8px;
+            background: #ffd700;
+            color: black;
+            border: none;
+            border-radius: 6px;
             cursor: pointer;
-            font-weight: bold;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.6);
-        }
-        button:hover {
-            background: linear-gradient(#ffe8a8, #f0d48c);
-            transform: translateY(-2px);
         }
     </style>
 </head>
@@ -83,30 +62,23 @@
         <div class="subtitle">PRIVATE EDITION • TEST WORLD</div>
         
         <div class="info">
-            <span class="label">ACTIVE PLAYERS</span> 
+            <div class="label">ACTIVE PLAYERS</div>
             <strong>65</strong>
         </div>
         <div class="info">
-            <span class="label">DAYS SINCE START</span> 
+            <div class="label">DAYS SINCE START</div>
             <strong>272</strong>
         </div>
         <div class="info">
-            <span class="label">HOUSES LEFT IN GLORY RACE</span> 
+            <div class="label">HOUSES LEFT IN GLORY RACE</div>
             <strong>16</strong>
         </div>
         <div class="info">
-            <span class="label">CURRENT AGE</span> 
+            <div class="label">CURRENT AGE</div>
             <strong>2nd Age</strong>
         </div>
         
-        <button onclick="alert('Live data is currently blocked by CORS.\nWe are waiting for the server owner to enable it.')">
-            REFRESH DATA
-        </button>
-        
-        <p style="margin-top: 30px; color: #b89a6e; font-size: 0.9em;">
-            Showing latest known values from the test world.<br>
-            Live updates will be enabled soon.
-        </p>
+        <button onclick="alert('Live data coming soon')">REFRESH DATA</button>
     </div>
 </body>
 </html>
