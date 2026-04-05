@@ -103,29 +103,36 @@
 
     <script>
         async function fetchWorldInfo() {
+            const statusEl = document.getElementById('activePlayers');
+            statusEl.textContent = "Trying to load...";
+
             try {
-                // Using allorigins proxy (more reliable for this use case)
-                const url = 'https://nh3.apilink.link/WorldMap/WorldInfo';
-                const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`;
-                
-                const response = await fetch(proxyUrl);
+                // Using a different proxy service
+                const targetUrl = 'https://nh3.apilink.link/WorldMap/WorldInfo';
+                const proxyUrl = `https://cors-anywhere.herokuapp.com/${targetUrl}`;
+
+                const response = await fetch(proxyUrl, {
+                    headers: {
+                        'Origin': 'https://www.strongholdreborn.com'
+                    }
+                });
+
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
                 const data = await response.json();
-                
-                // allorigins wraps the response
-                const actualData = JSON.parse(data.contents);
-                
-                document.getElementById('activePlayers').textContent = actualData.worldInfo.activePlayers || 'N/A';
-                document.getElementById('daysOld').textContent = actualData.worldInfo.daysOld || 'N/A';
-                document.getElementById('housesInGlory').textContent = actualData.worldInfo.housesInGlory || 'N/A';
+
+                document.getElementById('activePlayers').textContent = data.worldInfo.activePlayers || 'N/A';
+                document.getElementById('daysOld').textContent = data.worldInfo.daysOld || 'N/A';
+                document.getElementById('housesInGlory').textContent = data.worldInfo.housesInGlory || 'N/A';
                 document.getElementById('age').textContent = "2nd Age";
-                
-                console.log("✅ Data loaded successfully:", actualData);
+
+                console.log("✅ Success:", data);
             } catch (error) {
-                console.error("❌ Error fetching data:", error);
-                document.getElementById('activePlayers').textContent = "Error";
-                document.getElementById('daysOld').textContent = "Error";
-                document.getElementById('housesInGlory').textContent = "Error";
-                document.getElementById('age').textContent = "Error";
+                console.error("Failed:", error);
+                document.getElementById('activePlayers').textContent = "Failed to load";
+                document.getElementById('daysOld').textContent = "Failed to load";
+                document.getElementById('housesInGlory').textContent = "Failed to load";
+                document.getElementById('age').textContent = "Failed to load";
             }
         }
 
