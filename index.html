@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stronghold Reborn</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(rgba(20, 18, 12, 0.45), rgba(15, 12, 8, 0.65)),
+                        url('https://picsum.photos/id/1015/1920/1080') center/cover fixed;
+            color: #ffeb9e;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card {
+            background: rgba(28, 22, 15, 0.92);
+            border: 5px solid #d4af37;
+            border-image: linear-gradient(#ffe8a8, #d4af37, #b8860b) 1;
+            border-radius: 16px;
+            padding: 60px 55px;
+            max-width: 720px;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.85),
+                        inset 0 0 100px rgba(255, 235, 158, 0.12);
+        }
+        h1 {
+            color: #ffeb9e;
+            font-size: 3.3em;
+            margin: 0 0 12px 0;
+            text-shadow: 0 6px 15px rgba(0,0,0,0.9),
+                         0 0 30px rgba(255, 235, 158, 0.7);
+            letter-spacing: 4px;
+        }
+        .subtitle {
+            color: #e8c070;
+            font-size: 1.45em;
+            margin-bottom: 50px;
+            letter-spacing: 5px;
+        }
+        .info {
+            font-size: 1.65em;
+            margin: 34px 0;
+        }
+        .label {
+            color: #f0d48c;
+            font-size: 1.05em;
+            display: block;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+        strong {
+            color: #fff8d6;
+            font-size: 1.6em;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.75);
+        }
+        button {
+            margin-top: 45px;
+            padding: 18px 48px;
+            font-size: 1.25em;
+            background: linear-gradient(#f0d48c, #d4af37);
+            color: #2c2118;
+            border: 3px solid #b8860b;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+        }
+        button:hover {
+            background: linear-gradient(#ffe8a8, #f0d48c);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Stronghold Reborn</h1>
+        <div class="subtitle">PRIVATE EDITION • TEST WORLD</div>
+        
+        <div class="info">
+            <span class="label">ACTIVE PLAYERS</span> 
+            <strong id="activePlayers">Loading...</strong>
+        </div>
+        <div class="info">
+            <span class="label">DAYS SINCE START</span> 
+            <strong id="daysOld">Loading...</strong>
+        </div>
+        <div class="info">
+            <span class="label">HOUSES LEFT IN GLORY RACE</span> 
+            <strong id="housesInGlory">Loading...</strong>
+        </div>
+        <div class="info">
+            <span class="label">CURRENT AGE</span> 
+            <strong id="age">Loading...</strong>
+        </div>
+        
+        <button onclick="fetchWorldInfo()">REFRESH DATA</button>
+    </div>
+
+    <script>
+        async function fetchWorldInfo() {
+            try {
+                const proxy = 'https://corsproxy.io/?';
+                const url = 'https://nh3.apilink.link/WorldMap/WorldInfo';
+                
+                const response = await fetch(proxy + encodeURIComponent(url));
+                const data = await response.json();
+                
+                document.getElementById('activePlayers').textContent = data.worldInfo.activePlayers || 'N/A';
+                document.getElementById('daysOld').textContent = data.worldInfo.daysOld || 'N/A';
+                document.getElementById('housesInGlory').textContent = data.worldInfo.housesInGlory || 'N/A';
+                document.getElementById('age').textContent = "2nd Age";
+            } catch (error) {
+                console.error("Error:", error);
+                alert("Failed to load data");
+            }
+        }
+
+        window.onload = fetchWorldInfo;
+    </script>
+</body>
+</html>
