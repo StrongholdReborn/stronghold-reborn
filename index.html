@@ -10,7 +10,7 @@
             margin: 0;
             padding: 0;
             min-height: 100vh;
-            background: linear-gradient(rgba(18, 15, 10, 0.35), rgba(12, 10, 7, 0.55)),
+            background: linear-gradient(rgba(15, 12, 8, 0.45), rgba(10, 8, 5, 0.65)),
                         url('https://raw.githubusercontent.com/StrongholdReborn/stronghold-reborn/main/background.jpg') center/cover fixed;
             background-attachment: fixed;
             color: #ffeb9e;
@@ -20,63 +20,60 @@
             justify-content: center;
         }
         .card {
-            background: rgba(32, 26, 19, 0.82);
-            border: 6px solid #e8c070;
-            border-image: linear-gradient(#ffe8a8, #e8c070, #d4af37) 1;
-            border-radius: 20px;
-            padding: 48px 55px;
-            max-width: 500px;
-            box-shadow: 
-                0 30px 75px rgba(0, 0, 0, 0.85),
-                inset 0 0 90px rgba(255, 235, 158, 0.25),
-                inset 0 0 45px rgba(212, 175, 55, 0.2);
+            background: rgba(28, 22, 15, 0.90);
+            border: 5px solid #d4af37;
+            border-image: linear-gradient(#ffe8a8, #d4af37, #b8860b) 1;
+            border-radius: 16px;
+            padding: 35px 40px;        /* Smaller padding */
+            max-width: 440px;          /* Much narrower */
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85),
+                        inset 0 0 70px rgba(255, 235, 158, 0.12);
         }
         h1 {
             color: #ffeb9e;
-            font-size: 2.85em;
-            margin: 0 0 10px 0;
-            text-shadow: 0 6px 15px rgba(0,0,0,0.9),
-                         0 0 32px rgba(255, 235, 158, 0.8);
-            letter-spacing: 4px;
+            font-size: 2.5em;
+            margin: 0 0 8px 0;
+            text-shadow: 0 5px 12px rgba(0,0,0,0.9),
+                         0 0 25px rgba(255, 235, 158, 0.6);
+            letter-spacing: 3px;
         }
         .subtitle {
-            color: #f0d48c;
-            font-size: 1.32em;
-            margin-bottom: 42px;
-            letter-spacing: 5px;
-            text-shadow: 2px 2px 6px rgba(0,0,0,0.75);
+            color: #e8c070;
+            font-size: 1.2em;
+            margin-bottom: 35px;
+            letter-spacing: 4px;
         }
         .info {
-            font-size: 1.55em;
-            margin: 30px 0;
+            font-size: 1.4em;
+            margin: 24px 0;
         }
         .label {
             color: #f0d48c;
-            font-size: 1.05em;
+            font-size: 1.0em;
             display: block;
-            margin-bottom: 7px;
-            letter-spacing: 2.5px;
+            margin-bottom: 6px;
+            letter-spacing: 2px;
         }
         strong {
             color: #fff8d6;
-            font-size: 1.68em;
-            text-shadow: 3px 3px 8px rgba(0,0,0,0.8);
+            font-size: 1.5em;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.75);
         }
         button {
-            margin-top: 45px;
-            padding: 16px 48px;
-            font-size: 1.18em;
-            background: linear-gradient(#ffe8a8, #d4af37);
+            margin-top: 35px;
+            padding: 14px 40px;
+            font-size: 1.1em;
+            background: linear-gradient(#f0d48c, #d4af37);
             color: #2c2118;
-            border: 3px solid #e8c070;
+            border: 3px solid #b8860b;
             border-radius: 8px;
             cursor: pointer;
             font-weight: bold;
-            box-shadow: 0 8px 22px rgba(0,0,0,0.7);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.6);
         }
         button:hover {
-            background: linear-gradient(#fff0c8, #ffe8a8);
-            transform: translateY(-3px);
+            background: linear-gradient(#ffe8a8, #f0d48c);
+            transform: translateY(-2px);
         }
     </style>
 </head>
@@ -106,7 +103,7 @@
             REFRESH DATA
         </button>
         
-        <p style="margin-top: 40px; color: #e8c070; font-size: 0.95em;">
+        <p style="margin-top: 30px; color: #b89a6e; font-size: 0.9em;">
             Showing latest known values from the test world.<br>
             Live updates will be enabled soon.
         </p>
