@@ -10,7 +10,7 @@
             margin: 0;
             padding: 0;
             min-height: 100vh;
-            background: linear-gradient(rgba(20, 18, 12, 0.45), rgba(15, 12, 8, 0.65)),
+            background: linear-gradient(rgba(15, 12, 8, 0.6), rgba(10, 8, 5, 0.75)),
                         url('https://picsum.photos/id/1015/1920/1080') center/cover fixed;
             color: #ffeb9e;
             text-align: center;
@@ -19,64 +19,61 @@
             justify-content: center;
         }
         .card {
-            background: rgba(28, 22, 15, 0.92);
-            border: 5px solid #d4af37;
+            background: rgba(25, 20, 15, 0.94);
+            border: 6px solid #d4af37;
             border-image: linear-gradient(#ffe8a8, #d4af37, #b8860b) 1;
-            border-radius: 16px;
-            padding: 60px 55px;
-            max-width: 720px;
-            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.85),
-                        inset 0 0 100px rgba(255, 235, 158, 0.12);
+            border-radius: 18px;
+            padding: 65px 60px;
+            max-width: 740px;
+            box-shadow: 0 35px 80px rgba(0, 0, 0, 0.9),
+                        inset 0 0 120px rgba(255, 235, 158, 0.1);
         }
         h1 {
             color: #ffeb9e;
-            font-size: 3.3em;
-            margin: 0 0 12px 0;
-            text-shadow: 0 6px 15px rgba(0,0,0,0.9),
-                         0 0 30px rgba(255, 235, 158, 0.7);
-            letter-spacing: 4px;
+            font-size: 3.4em;
+            margin: 0 0 10px 0;
+            text-shadow: 0 6px 16px rgba(0,0,0,0.95),
+                         0 0 35px rgba(255, 235, 158, 0.65);
+            letter-spacing: 5px;
         }
         .subtitle {
             color: #e8c070;
-            font-size: 1.45em;
-            margin-bottom: 50px;
-            letter-spacing: 5px;
+            font-size: 1.5em;
+            margin-bottom: 55px;
+            letter-spacing: 6px;
+            font-weight: normal;
         }
         .info {
-            font-size: 1.65em;
-            margin: 34px 0;
+            font-size: 1.7em;
+            margin: 36px 0;
         }
         .label {
             color: #f0d48c;
-            font-size: 1.05em;
+            font-size: 1.1em;
             display: block;
-            margin-bottom: 8px;
-            letter-spacing: 2px;
+            margin-bottom: 10px;
+            letter-spacing: 2.5px;
         }
         strong {
             color: #fff8d6;
-            font-size: 1.6em;
-            text-shadow: 2px 2px 6px rgba(0,0,0,0.75);
+            font-size: 1.75em;
+            text-shadow: 3px 3px 8px rgba(0,0,0,0.8);
         }
         button {
-            margin-top: 45px;
-            padding: 18px 48px;
-            font-size: 1.25em;
+            margin-top: 50px;
+            padding: 18px 52px;
+            font-size: 1.3em;
             background: linear-gradient(#f0d48c, #d4af37);
             color: #2c2118;
             border: 3px solid #b8860b;
             border-radius: 8px;
             cursor: pointer;
             font-weight: bold;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.7);
         }
         button:hover {
             background: linear-gradient(#ffe8a8, #f0d48c);
-            transform: translateY(-3px);
-        }
-        .error {
-            color: #ff6666;
-            font-size: 1.1em;
+            transform: translateY(-4px);
         }
     </style>
 </head>
@@ -87,26 +84,28 @@
         
         <div class="info">
             <span class="label">ACTIVE PLAYERS</span> 
-            <strong id="activePlayers">65</strong>
+            <strong>65</strong>
         </div>
         <div class="info">
             <span class="label">DAYS SINCE START</span> 
-            <strong id="daysOld">272</strong>
+            <strong>272</strong>
         </div>
         <div class="info">
             <span class="label">HOUSES LEFT IN GLORY RACE</span> 
-            <strong id="housesInGlory">16</strong>
+            <strong>16</strong>
         </div>
         <div class="info">
             <span class="label">CURRENT AGE</span> 
-            <strong id="age">2nd Age</strong>
+            <strong>2nd Age</strong>
         </div>
         
-        <button onclick="alert('Live data fetch is currently blocked by the server CORS policy.\n\nWe will fix this with the server owner soon.')">REFRESH DATA</button>
+        <button onclick="alert('Live data is currently blocked by CORS.\n\nWe are waiting for the server owner to enable it.')">
+            REFRESH DATA
+        </button>
         
-        <p style="margin-top: 40px; font-size: 0.95em; color: #b89a6e;">
-            Live data connection is temporarily unavailable.<br>
-            Showing last known values from test world.
+        <p style="margin-top: 50px; color: #b89a6e; font-size: 1em;">
+            Showing latest known values from the test world.<br>
+            Live updates will be enabled soon.
         </p>
     </div>
 </body>
